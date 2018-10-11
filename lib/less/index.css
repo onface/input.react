@@ -1,0 +1,180 @@
+.face-input {
+  position: relative;
+  display: inline-block;
+  width: 12.5em;
+}
+.face-input--textarea {
+  width: auto;
+}
+.face-input--contact-next {
+  margin-right: -1px;
+}
+.face-input--contact-next .face-input-inner {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.face-input--contact-prev .face-input-inner {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.face-input--full {
+  width: 100%;
+}
+.face-input--full .face-input-control-textarea {
+  width: 100%;
+}
+.face-input:hover,
+.face-input--focus {
+  z-index: 2;
+}
+.face-input:hover .face-input-inner,
+.face-input--focus .face-input-inner {
+  border-color: #a598b2;
+  box-shadow: inset 0 0.1em 0 rgba(0, 0, 0, 0.04), 0 0 0.2em rgba(177, 171, 225, 0.5);
+}
+.face-input:hover .face-input-prefix,
+.face-input--focus .face-input-prefix,
+.face-input:hover .face-input-suffix,
+.face-input--focus .face-input-suffix {
+  border-color: #a598b2;
+}
+.face-input--error .face-input-inner {
+  border-color: #f52231;
+  box-shadow: inset 0 0.1em 0 rgba(0, 0, 0, 0.04), 0 0 0.2em #fdcdd0;
+}
+.face-input--error .face-input-prefix,
+.face-input--error .face-input-suffix {
+  border-color: #f52231;
+}
+.face-input-inner {
+  box-sizing: border-box;
+  display: flex;
+  border-radius: 0.2em;
+  border: 1px solid #cccccc;
+  box-shadow: inset 0 0.1em 0 rgba(0, 0, 0, 0.04);
+  background-color: white;
+  color: rgba(0, 0, 0, 0.65);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.face-input-control {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  flex: auto;
+  vertical-align: middle;
+}
+.face-input-control-input {
+  display: block;
+  font-size: 1em;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.65);
+  padding: 0 0.5em;
+  box-sizing: border-box;
+  line-height: 1.5;
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+.face-input-control-input::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+.face-input-control-textarea {
+  display: block;
+  font-size: 1em;
+  width: 12.5em;
+  color: rgba(0, 0, 0, 0.65);
+  padding: 0 0.5em;
+  box-sizing: border-box;
+  line-height: 1.5;
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+.face-input-control-textarea::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+.face-input-prefix {
+  border-right: 1px solid #cccccc;
+  border-top-left-radius: 0.2em;
+  border-bottom-left-radius: 0.2em;
+  background-color: #f5f7fb;
+}
+.face-input-suffix {
+  border-left: 1px solid #cccccc;
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+  background-color: #f5f7fb;
+}
+.face-input-prefix,
+.face-input-suffix {
+  outline: none;
+  flex: initial;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  border-width: 0;
+  font-size: 1em;
+}
+.face-input-prefix:after,
+.face-input-suffix:after {
+  content: '&nbsp;';
+}
+.face-input-prefix img,
+.face-input-suffix img {
+  vertical-align: middle;
+  margin-top: -0.2em;
+  height: 1em;
+}
+.face-input--prefix .face-input-prefix {
+  padding-left: .2em;
+  padding-right: .2em;
+  overflow: visible;
+  width: auto;
+  border-width: 1px;
+}
+.face-input--prefix .face-input-prefix:after {
+  content: '';
+}
+.face-input--suffix .face-input-suffix {
+  padding-left: .2em;
+  padding-right: .2em;
+  overflow: visible;
+  width: auto;
+  border-width: 1px;
+}
+.face-input--suffix .face-input-suffix:after {
+  content: '';
+}
+.face-input--suffix-submit .face-input-suffix {
+  background-image: linear-gradient(#6c5fc7, #5b4cc0);
+  border-color: #6c5fc7;
+  cursor: pointer;
+}
+.face-input--suffix-submit .face-input-suffix:active {
+  opacity: .9;
+}
+.face-input--textarea .face-input-control-placeholder {
+  white-space: normal;
+}
+.face-input-control-placeholder {
+  position: absolute;
+  line-height: 1.5;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  color: rgba(0, 0, 0, 0.45);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.face-input-control-placeholder img {
+  height: 1em;
+  vertical-align: middle;
+  margin-top: -0.2em;
+  opacity: .8;
+}

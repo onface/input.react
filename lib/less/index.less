@@ -1,0 +1,188 @@
+@import "./settings.less";
+.@{face-input-prefix} {
+    position: relative;
+    display: inline-block;
+    width: 12.5em;
+}
+.@{face-input-prefix}--textarea {
+    width: auto;
+}
+.@{face-input-prefix}--contact-next {
+    margin-right: -1px;
+    .@{face-input-prefix}-inner {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+.@{face-input-prefix}--contact-prev {
+    .@{face-input-prefix}-inner {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+.@{face-input-prefix}--full {
+    width: 100%;
+    .@{face-input-prefix}-control-textarea {
+        width: 100%;
+    }
+}
+.@{face-input-prefix}:hover,
+.@{face-input-prefix}--focus {
+    .@{face-input-prefix}-inner{
+        border-color:@face-input-border-color--focus;
+        box-shadow: inset 0 .1em 0 @face-input-boxshow-inset-color, 0 0 .2em @face-input-boxshow-color--focus;
+    }
+    .@{face-input-prefix}-prefix,
+    .@{face-input-prefix}-suffix {
+        border-color: @face-input-border-color--focus;
+    }
+    z-index: 2;
+}
+.@{face-input-prefix}--error {
+    .@{face-input-prefix}-inner{
+        border-color:@face-input-border-color--error;
+        box-shadow: inset 0 .1em 0 @face-input-boxshow-inset-color, 0 0 .2em @face-input-boxshow-color--error;
+    }
+    .@{face-input-prefix}-prefix,
+    .@{face-input-prefix}-suffix {
+        border-color: @face-input-border-color--error;
+    }
+}
+.@{face-input-prefix}-inner {
+    box-sizing: border-box;
+    display: flex;
+    border-radius: @face-input-border-radius;
+    border:1px solid @face-input-border-color;
+    box-shadow: inset 0 .1em 0 @face-input-boxshow-inset-color;
+    background-color: white;
+    color:@face-input-color;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.@{face-input-prefix}-control {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    flex: auto;
+    vertical-align: middle;
+}
+.@{face-input-prefix}-control-input {
+    display: block;
+    font-size: 1em;
+    width: 100%;
+    color:@face-input-color;
+    padding:0 @face-input-control-input-padding;
+    box-sizing: border-box;
+    line-height: @face-input-line-height;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    &::placeholder {
+        color:@face-input-placeholder-color;
+    }
+}
+.@{face-input-prefix}-control-textarea {
+    display: block;
+    font-size: 1em;
+    width: 12.5em;
+    color:@face-input-color;
+    padding:0 @face-input-control-input-padding;
+    box-sizing: border-box;
+    line-height: @face-input-line-height;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    &::placeholder {
+        color:@face-input-placeholder-color;
+    }
+}
+.@{face-input-prefix}-prefix {
+    border-right:1px solid @face-input-border-color;
+    border-top-left-radius: @face-input-border-radius;
+    border-bottom-left-radius: @face-input-border-radius;
+    background-color: @face-input-prefix-bg-color;
+}
+.@{face-input-prefix}-suffix {
+    border-left:1px solid @face-input-border-color;
+    border-top-right-radius: @face-input-border-radius;
+    border-bottom-right-radius: @face-input-border-radius;
+    background-color: @face-input-suffix-bg-color;
+}
+
+.@{face-input-prefix}-prefix,
+.@{face-input-prefix}-suffix {
+    outline: none;
+    flex: initial;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    border-width: 0;
+    font-size:1em;
+    &:after {
+        content: '&nbsp;';
+    }
+    img {
+        vertical-align: middle;
+        margin-top: -.2em;
+        height: 1em;
+    }
+}
+.face-input__prefixAndSuffixStyle() {
+    padding-left: .2em;
+    padding-right: .2em;
+    overflow: visible;
+    width: auto;
+    border-width:1px;
+    &:after {
+        content: '';
+    }
+}
+.@{face-input-prefix}--prefix {
+    .@{face-input-prefix}-prefix {
+        .face-input__prefixAndSuffixStyle;
+    }
+}
+.@{face-input-prefix}--suffix {
+    .@{face-input-prefix}-suffix {
+        .face-input__prefixAndSuffixStyle;
+    }
+}
+.@{face-input-prefix}--suffix-submit {
+    // .@{face-input-prefix}-inner {
+    //     border-color: #6c5fc7;
+    // }
+    .@{face-input-prefix}-suffix {
+        background-image: linear-gradient(#6c5fc7, darken(#6c5fc7, 5%));
+        border-color:#6c5fc7;
+        cursor: pointer;
+        &:active {
+            opacity: .9;
+        }
+    }
+}
+.@{face-input-prefix}--textarea {
+    .@{face-input-prefix}-control-placeholder {
+        white-space:normal;
+    }
+}
+.@{face-input-prefix}-control-placeholder {
+    position: absolute;
+    line-height: @face-input-line-height;
+    padding-left: @face-input-control-input-padding;
+    padding-right: @face-input-control-input-padding;
+    color:@face-input-placeholder-color;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    img {
+        height: 1em;
+        vertical-align: middle;
+        margin-top: -.2em;
+        opacity: .8;
+    }
+}
