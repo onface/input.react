@@ -31,7 +31,9 @@ class Simple extends React.Component {
                 <hr/>
                 <Input full />
                 <hr/>
-                <Input style={{fontSize: '2em'}} defaultValue="大" />
+                    <Input style={{fontSize: '2em'}} defaultValue="大" />
+                    <hr/>
+                <Input connectNext /><Input prefix='@' connectPrev  />
                 <hr/>
                 <Input connectNext /><Input connectPrev  />
                 <hr/>
@@ -42,6 +44,12 @@ class Simple extends React.Component {
                 <Input textarea />
                 <hr/>
                 <Input textarea submit={(<img src="https://onface.live/design/media/nice/upload.svg"/>)} />
+                <hr/>
+                <Input prefix="prefix" showInput={false} />
+                <hr/>
+                <Input adaptive prefix="@" showInput={false} />
+                <hr/>
+                <Input connectNext /><Input adaptive prefix="@" showInput={false} connectPrev connectNext /><Input connectPrev  />
             </div>
         )
     }

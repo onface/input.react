@@ -2,11 +2,15 @@
 .@{face-input-prefix} {
     position: relative;
     display: inline-block;
-    width: 12.5em;
+    width: 11.52em;
+}
+.@{face-input-prefix}--adaptive {
+    width: auto;
 }
 .@{face-input-prefix}--textarea {
     width: auto;
 }
+
 .@{face-input-prefix}--connect-next {
     margin-right: -1px;
     .@{face-input-prefix}-inner {
@@ -196,5 +200,28 @@
         vertical-align: middle;
         margin-top: -.2em;
         opacity: .8;
+    }
+}
+
+.@{face-input-prefix}--hidden-input {
+    .@{face-input-prefix}-inner {
+        display: block;
+    }
+    .@{face-input-prefix}-control {
+        display: none;
+    }
+    .@{face-input-prefix}-prefix {
+        flex: auto;
+        border-right: none;
+        border-top-right-radius: @face-input-border-radius;
+        border-bottom-right-radius: @face-input-border-radius;
+        flex: none;
+        display: block;
+        &:after {
+            content: '';
+        }
+    }
+    .@{face-input-prefix}-suffix {
+        display: none;
     }
 }
