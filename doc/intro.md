@@ -12,3 +12,5 @@
 并且提供了优雅的 API，使用者不需要重新设计调用按钮的 API。常见的按钮类型 `button.react` 都已考虑到。
 
 -->
+
+`input.react` 能减少项目中 `input` `textarea` 的开发工作量，因为 `input.react` 实现了常见的 `input` 样式。最主要的事 `input.react` 的 `placeholder`不仅支持 `String` 还支持 `React Element`。

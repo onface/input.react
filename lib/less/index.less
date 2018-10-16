@@ -7,14 +7,14 @@
 .@{face-input-prefix}--textarea {
     width: auto;
 }
-.@{face-input-prefix}--contact-next {
+.@{face-input-prefix}--connect-next {
     margin-right: -1px;
     .@{face-input-prefix}-inner {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
 }
-.@{face-input-prefix}--contact-prev {
+.@{face-input-prefix}--connect-prev {
     .@{face-input-prefix}-inner {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
@@ -95,17 +95,27 @@
         color:@face-input-placeholder-color;
     }
 }
+.@{face-input-prefix}--textarea.@{face-input-prefix}--suffix-submit {
+    .@{face-input-prefix}-suffix,
+    .@{face-input-prefix}-prefix {
+        img {
+            height: 100%;
+            width: 2em;
+            margin-top: 0;
+        }
+    }
+}
 .@{face-input-prefix}-prefix {
     border-right:1px solid @face-input-border-color;
     border-top-left-radius: @face-input-border-radius;
     border-bottom-left-radius: @face-input-border-radius;
-    background-color: @face-input-prefix-bg-color;
+    background-image: linear-gradient(@face-input-prefix-bg-color, darken(@face-input-suffix-bg-color, 3%));
 }
 .@{face-input-prefix}-suffix {
     border-left:1px solid @face-input-border-color;
     border-top-right-radius: @face-input-border-radius;
     border-bottom-right-radius: @face-input-border-radius;
-    background-color: @face-input-suffix-bg-color;
+    background-image: linear-gradient(@face-input-suffix-bg-color, darken(@face-input-suffix-bg-color, 3%));
 }
 
 .@{face-input-prefix}-prefix,
@@ -120,8 +130,9 @@
     overflow: hidden;
     border-width: 0;
     font-size:1em;
+    line-height: @face-input-line-height;
     &:after {
-        content: '&nbsp;';
+        content: 's';
     }
     img {
         vertical-align: middle;
@@ -134,6 +145,7 @@
     padding-right: .2em;
     overflow: visible;
     width: auto;
+    display: inline-block;
     border-width:1px;
     &:after {
         content: '';
